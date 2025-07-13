@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.about-image {
+  max-width: 200px;
+  height: auto;
+}
+footer a.text-white:hover {
+  color: #00ffd5;
+  text-decoration: underline;
+}

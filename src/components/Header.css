@@ -1,0 +1,21 @@
+.custom-navbar {
+  padding: 15px 30px;
+}
+
+.custom-nav .nav-link {
+  color: #d1d1d1;
+  font-size: 18px;
+  margin-left: 20px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.custom-nav .nav-link:hover,
+.custom-nav .nav-link:focus {
+  color: #00aaff;
+  border-bottom: 2px solid #00aaff;
+}
+
+.custom-nav .nav-link.active {
+  color: #00aaff;
+  border-bottom: 2px solid #00aaff;
+}
