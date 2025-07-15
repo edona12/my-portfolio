@@ -26,7 +26,8 @@ const About = () => {
         <Col md={8}>
           <h2>About Me</h2>
           <p>
-           Hi, I'm Edona, a passionate web developer skilled in React, JavaScript, HTML, CSS, and project management. I love creating clean, responsive websites and always enjoy learning new technologies.
+           Hi, I'm Edona Çadraku, a web developer with experience in React, JavaScript, HTML, CSS, and project management. I enjoy creating clean,
+            responsive websites and practical solutions. I'm open to new opportunities where I can contribute and grow professionally.
           </p>
         </Col>
       </Row>
