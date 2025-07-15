@@ -57,29 +57,7 @@ const Projects = () => {
   },
 ];
 
-//   const projectList = [
-//     {
-//       title: "MIRA Task Manager",
-//       description:
-//         "A full-stack task management app built with React, Node.js, PostgreSQL, and MongoDB.",
-//       link: "https://github.com/edona12/mira-task-manager",
-//       screenshots: [mira1, mira2, mira3, mira4, mira5, mira6],
-//     },
-//     {
-//       title: "Personal Portfolio",
-//       description:
-//         "A responsive personal website to showcase my projects and skills.",
-//       link: "https://github.com/edona12/personal-portfolio",
-//       screenshots: [],
-//     },
-//   {
-//   title: "Bootstrap Website",
-//   description: "A modern website layout created with HTML, CSS, and Bootstrap.",
-//   link: "https://github.com/edona12/Bootstrap-project",
-//   screenshots: [b, b1, b2, b3, b4, b5],
-// },
 
-//   ];
 
   const [showModal, setShowModal] = useState(false);
   const [activeScreenshots, setActiveScreenshots] = useState([]);

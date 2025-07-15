@@ -6,12 +6,7 @@ const About = () => {
     <Container id="about" className="py-5">
       <Row className="align-items-center">
         <Col md={4}>
-       {/* <Image
-  src="/selfie.jpeg"
-  roundedCircle
-  alt="My Photo"
-  style={{ width: "180px", height: "180px", objectFit: "cover" }}
-/> */}
+      
 <Image
   src="/selfie.jpeg"
   roundedCircle
