@@ -19,11 +19,13 @@ const About = () => {
 
         </Col>
         <Col md={8}>
-          <h2>About Me</h2>
-          <p>
-           Hi, I'm Edona Çadraku, a web developer with experience in React, JavaScript, HTML, CSS, and project management. I enjoy creating clean,
-            responsive websites and practical solutions. I'm open to new opportunities where I can contribute and grow professionally.
-          </p>
+          <h1 style={{ fontSize: "48px", fontWeight: "700" }}>
+  Edona Çadraku
+</h1>
+
+<p style={{ maxWidth: "600px", marginTop: "15px", color: "#555" }}>
+  I build modern, responsive web applications using React, JavaScript, and WordPress, focusing on clean design and user-friendly experiences.
+</p>
         </Col>
       </Row>
     </Container>
