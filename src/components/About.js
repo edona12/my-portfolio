@@ -7,13 +7,27 @@ const About = () => {
       <Row className="align-items-center">
         <Col md={4}>
       
+{/* <Image
+  src="/selfie.jpeg"
+  borderRadius
+  alt="My Photo"
+   style={{ width: "180px", height: "180px", objectFit: "contain", gap: "100px", background: "#fff" }}
+  
+/> */}
+
+
 <Image
   src="/selfie.jpeg"
-  roundedCircle
   alt="My Photo"
-  style={{ width: "180px", height: "180px", objectFit: "contain", background: "#fff" }}
+  style={{
+    width: "250px",
+    height: "250px",
+    objectFit: "contain",
+    borderRadius: "550px",
+    marginLeft: "50px",
+    background: "#fff"
+  }}
 />
-
 
 
 
@@ -33,3 +47,5 @@ const About = () => {
 };
 
 export default About;
+
+
