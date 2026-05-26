@@ -20,6 +20,13 @@ import b5 from "../b5.png";
 
 import nexis from "../nexis.png";
 
+// PERSONAL NOTES API
+import personalnotes from "../personalnotes.png";
+import register from "../register.png";
+import login from "../login.png";
+
+
+
 // AE GAMES
 import ae16 from "../ae16.png";
 import ae2 from "../ae2.png";
@@ -52,6 +59,13 @@ const Projects = () => {
       link: "https://github.com/edona12/AeGames",
       screenshots: [ae2, ae3, ae4, ae5, ae7, ae8, ae16, ae555],
     },
+    {
+  title: "Personal Notes API",
+  description:
+    "A RESTful API for managing personal notes with authentication using Node.js, Express, MongoDB, and JWT.",
+  link: "https://github.com/edona12/personal-notes-api",
+  screenshots: [personalnotes, register, login],
+},
     {
       title: "Bootstrap Website",
       description:
@@ -94,7 +108,7 @@ const Projects = () => {
 
       <Row>
         {projectList.map((project, index) => (
-          <Col md={3} key={index} className="mb-4">
+          <Col md={6} lg={4} key={index} className="mb-4">
             <Card
               className="border-0 shadow-sm h-100 project-card"
               style={{

@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
         </p>
         <a
-          href="/cv.pdf"
+          href="/EdonaÇadrakuCV.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary mt-2"
