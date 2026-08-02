@@ -45,3 +45,29 @@ footer a.text-white:hover {
   color: #00ffd5;
   text-decoration: underline;
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 4rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 7.793 11.646 15.5a.5.5 0 0 0 .708-.708L5.707 8 11.354 1.646z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.2rem 1.2rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-control-prev-icon {
+  transform: none;
+}
+
+.carousel-control-next-icon {
+  transform: rotate(180deg);
+}

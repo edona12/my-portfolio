@@ -38,7 +38,7 @@ const About = () => {
 </h1>
 
 <p style={{ maxWidth: "600px", marginTop: "15px", color: "#555" }}>
-  I build modern, responsive web applications using React, JavaScript, and WordPress, focusing on clean design and user-friendly experiences.
+  Dedicated software developer focused on creating reliable, efficient, and user-friendly applications while continuously learning and growing in modern software development.
 </p>
         </Col>
       </Row>

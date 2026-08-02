@@ -18,6 +18,12 @@ import b3 from "../b3.png";
 import b4 from "../b4.png";
 import b5 from "../b5.png";
 
+import taskManagerPreview from "../taskmanager.png";
+import taskManagerScreen1 from "../taskmanager1.png";
+import taskManagerScreen3 from "../taskmanager3.png";
+import apiScreenshot from "../Api.png";
+import filterByStatusScreenshot from "../FilterbyStatus.png";
+
 import nexis from "../nexis.png";
 
 // PERSONAL NOTES API
@@ -40,10 +46,18 @@ import ae555 from "../ae555.png";
 const Projects = () => {
   const projectList = [
     {
-      title: "Nexis Project",
-      description: "A real-world company website project.",
-      link: "https://nexis-test.rrota.com/",
-      screenshots: [nexis],
+      title: "Task Manager Mobile",
+      description:
+        "A mobile task management application built with React Native, Expo Router, and AsyncStorage. The application allows users to manage personal tasks with local data persistence and a simple, user-friendly interface.",
+      link: "https://github.com/edona12/task-manager-mobile",
+      screenshots: [taskManagerPreview, taskManagerScreen1, taskManagerScreen3, apiScreenshot, filterByStatusScreenshot],
+    },
+    {
+      title: "Ae Games",
+      description:
+        "A university project with interactive web games using HTML, CSS, JavaScript, and Pixi.js.",
+      link: "https://github.com/edona12/AeGames",
+      screenshots: [ae2, ae3, ae4, ae5, ae7, ae8, ae16, ae555],
     },
     {
       title: "MIRA Task Manager",
@@ -53,11 +67,10 @@ const Projects = () => {
       screenshots: [mira1, mira2, mira3, mira4, mira5, mira6],
     },
     {
-      title: "Ae Games",
-      description:
-        "A university project with interactive web games using HTML, CSS, JavaScript, and Pixi.js.",
-      link: "https://github.com/edona12/AeGames",
-      screenshots: [ae2, ae3, ae4, ae5, ae7, ae8, ae16, ae555],
+      title: "Nexis Project",
+      description: "A real-world company website project.",
+      link: "https://nexis-test.rrota.com/",
+      screenshots: [nexis],
     },
     {
   title: "Personal Notes API",
@@ -135,14 +148,16 @@ const Projects = () => {
                       left: 0,
                       width: "100%",
                       height: "100%",
-                      background: "rgba(0,0,0,0.6)",
+                      background: "rgba(0,0,0,0.75)",
                       opacity: 0,
                       transition: "0.3s",
                       gap: "10px",
+                      zIndex: 2,
                     }}
                   >
                     <Button
-                      variant="primary"
+                      variant="light"
+                      className="text-dark fw-bold"
                       href={project.link}
                       target="_blank"
                     >
@@ -151,6 +166,7 @@ const Projects = () => {
 
                     <Button
                       variant="light"
+                      className="text-dark fw-bold"
                       onClick={() => handlePreview(project.screenshots)}
                     >
                       Preview
@@ -189,6 +205,11 @@ const Projects = () => {
                   className="d-block w-100"
                   src={src}
                   alt={`Screenshot ${idx + 1}`}
+                  style={{
+                    maxHeight: "60vh",
+                    width: "100%",
+                    objectFit: "contain",
+                  }}
                 />
               </Carousel.Item>
             ))}
