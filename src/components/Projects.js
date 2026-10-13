@@ -31,7 +31,20 @@ import personalnotes from "../personalnotes.png";
 import register from "../register.png";
 import login from "../login.png";
 
+// HOSTLY
+import hostly1 from "../hostly1.png";
+import hostly2 from "../hostly2.png";
+import hostly3 from "../hostly3.png";
+import hostly4 from "../hostly4.png";
+import hostly5 from "../hostly5.png";
+import hostly6 from "../hostly6.png";
 
+// CLINIC APPOINTMENTS
+import clinic1 from "../clinic1.png";
+import clinic2 from "../clinic2.png";
+import clinic3 from "../clinic3.png";
+import clinic4 from "../clinic4.png";
+import clinic5 from "../clinic5.png";
 
 // AE GAMES
 import ae16 from "../ae16.png";
@@ -45,6 +58,20 @@ import ae555 from "../ae555.png";
 
 const Projects = () => {
   const projectList = [
+    {
+      title: "ClinicAppointments (Klinika Vita)",
+      description:
+        "A clinic appointment booking system for patients, doctors, and admins. Built with Next.js, TypeScript, and Tailwind CSS.",
+      link: "https://github.com/edona12/ClinicAppointments",
+      screenshots: [clinic1, clinic2, clinic3, clinic4, clinic5],
+    },
+    {
+      title: "Restaurant Management System (Hostly)",
+      description:
+        "A full-stack restaurant management app for staff: guests, menu, orders, and order lines. Built with ASP.NET Core Web API (Clean Architecture, SQL Server, EF Core, JWT) and a React + Vite frontend.",
+      link: "https://github.com/edona12/RestaurantManagementSystem",
+      screenshots: [hostly1, hostly2, hostly3, hostly4, hostly5, hostly6],
+    },
     {
       title: "Task Manager Mobile",
       description:
@@ -181,6 +208,17 @@ const Projects = () => {
                 <Card.Text style={{ fontSize: "14px" }}>
                   {project.description}
                 </Card.Text>
+                {project.screenshots.length === 0 && (
+                  <Button
+                    variant="dark"
+                    size="sm"
+                    href={project.link}
+                    target="_blank"
+                    className="mt-2"
+                  >
+                    View on GitHub
+                  </Button>
+                )}
               </Card.Body>
             </Card>
           </Col>
