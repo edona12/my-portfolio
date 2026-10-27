@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, Modal, Carousel } from "react-bootstrap";
+import React, { useState } from "react";
+import { Row, Col, Card, Button, Modal, Carousel } from "react-bootstrap";
 
 // MIRA
 import mira1 from "../mira1.png";
@@ -59,7 +59,19 @@ import ae555 from "../ae555.png";
 const Projects = () => {
   const projectList = [
     {
+      title: "Cadraku Putz Website",
+      category: "Business website · Austria",
+      technologies: "Responsive web design · Business website",
+      description:
+        "A responsive website for Cadraku Putz, an Austrian interior and exterior plastering and renovation company.",
+      link: "https://cadraku-putz.netlify.app/",
+      thumbnailMode: "logo",
+      screenshots: ["/cadraku-putz-logo.jpg", "/cadraku-putz-cover.jpg"],
+    },
+    {
       title: "ClinicAppointments (Klinika Vita)",
+      category: "Healthcare · Web application",
+      technologies: "Next.js · TypeScript · Tailwind CSS",
       description:
         "A clinic appointment booking system for patients, doctors, and admins. Built with Next.js, TypeScript, and Tailwind CSS.",
       link: "https://github.com/edona12/ClinicAppointments",
@@ -67,6 +79,8 @@ const Projects = () => {
     },
     {
       title: "Restaurant Management System (Hostly)",
+      category: "Hospitality · Full stack",
+      technologies: "ASP.NET Core · SQL Server · React · Vite",
       description:
         "A full-stack restaurant management app for staff: guests, menu, orders, and order lines. Built with ASP.NET Core Web API (Clean Architecture, SQL Server, EF Core, JWT) and a React + Vite frontend.",
       link: "https://github.com/edona12/RestaurantManagementSystem",
@@ -74,6 +88,8 @@ const Projects = () => {
     },
     {
       title: "Task Manager Mobile",
+      category: "Productivity · Mobile application",
+      technologies: "React Native · Expo Router · AsyncStorage",
       description:
         "A mobile task management application built with React Native, Expo Router, and AsyncStorage. The application allows users to manage personal tasks with local data persistence and a simple, user-friendly interface.",
       link: "https://github.com/edona12/task-manager-mobile",
@@ -81,6 +97,8 @@ const Projects = () => {
     },
     {
       title: "Ae Games",
+      category: "Interactive · University project",
+      technologies: "HTML · CSS · JavaScript · Pixi.js",
       description:
         "A university project with interactive web games using HTML, CSS, JavaScript, and Pixi.js.",
       link: "https://github.com/edona12/AeGames",
@@ -88,6 +106,8 @@ const Projects = () => {
     },
     {
       title: "MIRA Task Manager",
+      category: "Productivity · Full stack",
+      technologies: "React · Node.js · PostgreSQL · MongoDB",
       description:
         "A full-stack task management app built with React, Node.js, PostgreSQL, and MongoDB.",
       link: "https://github.com/edona12/mira-task-manager",
@@ -95,12 +115,16 @@ const Projects = () => {
     },
     {
       title: "Nexis Project",
+      category: "Company website",
+      technologies: "Web development",
       description: "A real-world company website project.",
       link: "https://nexis-test.rrota.com/",
       screenshots: [nexis],
     },
     {
   title: "Personal Notes API",
+  category: "Developer tools · REST API",
+  technologies: "Node.js · Express · MongoDB · JWT",
   description:
     "A RESTful API for managing personal notes with authentication using Node.js, Express, MongoDB, and JWT.",
   link: "https://github.com/edona12/personal-notes-api",
@@ -108,6 +132,8 @@ const Projects = () => {
 },
     {
       title: "Bootstrap Website",
+      category: "Web design · Frontend",
+      technologies: "HTML · CSS · Bootstrap",
       description:
         "A modern website layout created with HTML, CSS, and Bootstrap.",
       link: "https://github.com/edona12/Bootstrap-project",
@@ -123,70 +149,38 @@ const Projects = () => {
     setShowModal(true);
   };
 
-  // Hover effect (overlay + lift)
-  useEffect(() => {
-    const cards = document.querySelectorAll(".project-card");
-
-    cards.forEach((card) => {
-      const overlay = card.querySelector(".overlay");
-
-      card.addEventListener("mouseenter", () => {
-        if (overlay) overlay.style.opacity = 1;
-        card.style.transform = "translateY(-8px)";
-      });
-
-      card.addEventListener("mouseleave", () => {
-        if (overlay) overlay.style.opacity = 0;
-        card.style.transform = "translateY(0)";
-      });
-    });
-  }, []);
-
   return (
-    <Container id="projects" className="py-5">
-      <h2 className="mb-4 text-center">My Projects</h2>
-
-      <Row>
+    <section id="projects" className="projects-section">
+      <div className="section-wrap">
+      <div className="section-heading">
+        <div><div className="eyebrow">Selected work</div><h2>Things I’ve built.</h2></div>
+        <p>A selection of applications and experiments, made with curiosity and care.</p>
+      </div>
+      <Row className="project-grid">
         {projectList.map((project, index) => (
-          <Col md={6} lg={4} key={index} className="mb-4">
-            <Card
-              className="border-0 shadow-sm h-100 project-card"
-              style={{
-                borderRadius: "15px",
-                overflow: "hidden",
-                transition: "0.3s",
-              }}
-            >
+          <Col key={project.title}>
+            <Card className={`h-100 project-card ${project.thumbnailMode === "logo" ? "project-card-logo" : ""}`}>
               {/* IMAGE + OVERLAY */}
               {project.screenshots.length > 0 && (
-                <div style={{ position: "relative" }}>
+                <div className="project-image-wrap">
                   <Card.Img
                     variant="top"
                     src={project.screenshots[0]}
-                    style={{ height: "180px", objectFit: "cover" }}
+                    alt={project.thumbnailMode === "logo" ? `${project.title} logo` : `${project.title} project preview`}
+                    loading="lazy"
                   />
 
                   {/* OVERLAY */}
                   <div
                     className="overlay d-flex justify-content-center align-items-center"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      background: "rgba(0,0,0,0.75)",
-                      opacity: 0,
-                      transition: "0.3s",
-                      gap: "10px",
-                      zIndex: 2,
-                    }}
+                    style={{ position: "absolute", inset: 0, display: "flex", gap: "10px", zIndex: 2 }}
                   >
                     <Button
                       variant="light"
                       className="text-dark fw-bold"
                       href={project.link}
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       View
                     </Button>
@@ -203,17 +197,18 @@ const Projects = () => {
               )}
 
               {/* BODY */}
-              <Card.Body className="text-center">
+              <Card.Body>
+                <div className="eyebrow mb-2">{project.category}</div>
                 <Card.Title>{project.title}</Card.Title>
-                <Card.Text style={{ fontSize: "14px" }}>
-                  {project.description}
-                </Card.Text>
+                <Card.Text>{project.description}</Card.Text>
+                <div className="project-tags">{project.technologies}</div>
                 {project.screenshots.length === 0 && (
                   <Button
                     variant="dark"
                     size="sm"
                     href={project.link}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-2"
                   >
                     View on GitHub
@@ -254,7 +249,8 @@ const Projects = () => {
           </Carousel>
         </Modal.Body>
       </Modal>
-    </Container>
+      </div>
+    </section>
   );
 };
 
